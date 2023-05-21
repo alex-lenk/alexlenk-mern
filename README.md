@@ -1,0 +1,5 @@
+- React
+- Redux Toolkit
+- Typescript
+- Express
+- Node
