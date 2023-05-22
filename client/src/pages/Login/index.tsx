@@ -6,15 +6,7 @@ const Login: React.FC = () => {
     return (
         <>
             <Helmet>
-                <meta name="description" content="Login to a comunity of people that are passionate about astronomy" />
-                <meta property="og:title" content="Login - Astronomy blog" />
-                <meta property="og:url" content="http://blog.chirilovnarcis.ro/login" />
-                <meta property="og:image" content="https://blog.chirilovnarcis.ro/hero.webp" />
-                <meta
-                    property="og:description"
-                    content="Login to a comunity of people that are passionate about astronomy"
-                />
-                <title>Login - Astronomy blog</title>
+                <title>Login - blog</title>
             </Helmet>
             <LoginComponent />
         </>

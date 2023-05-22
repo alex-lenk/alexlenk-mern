@@ -14,7 +14,7 @@ import {
     TitleContainer,
 } from "./postComponents";
 
-export const Post = ({ imageURL, title, description, slug }: shortPostInterface) => {
+export const Post = ({ imageURL, title, introtext, slug }: shortPostInterface) => {
     return (
         <>
             <PostContainer>
@@ -29,7 +29,7 @@ export const Post = ({ imageURL, title, description, slug }: shortPostInterface)
                     </TitleContainer>
                     <DescriptionContainer>
                         <Description>
-                            {description}
+                            {introtext}
                             <Link to={`/blog/post/${slug}`}>
                                 <Dots>...</Dots>
                             </Link>

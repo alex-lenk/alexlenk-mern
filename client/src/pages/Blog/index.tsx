@@ -2,7 +2,7 @@ import BlogComponent from "../../components/BlogComponent";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getPosts } from "../../redux/slices/posts";
-import { RootState } from "../../index";
+import { RootState } from "../../redux";
 import { createSearchParams, useLocation, useNavigate } from "react-router-dom";
 import { DarkBackground } from "../../containers/DarkBackground";
 import { MainText } from "../../globalStyles";
@@ -73,6 +73,7 @@ const Blog = () => {
 
         dispatch(getPosts({ page: Number(e.currentTarget.value), perPage: 10 }));
     };
+
     return (
         <>
             {posts.status === "loading" && (
@@ -96,12 +97,7 @@ const Blog = () => {
             {posts.status === "success" && posts.result && posts.result.results.length > 0 && (
                 <>
                     <Helmet>
-                        <meta name="description" content={`Here you can find all the posts on this blog `} />
-                        <meta property="og:title" content={`Blog - Astronomy blog`} />
-                        <meta property="og:url" content="http://blog.chirilovnarcis.ro/blog" />
-                        <meta property="og:image" content="https://blog.chirilovnarcis.ro/hero.webp" />
-                        <meta property="og:description" content={`Here you can find all the posts on this blog `} />
-                        <title>{`Blog - Astronomy blog`}</title>
+                        <title>{`Blog - blog`}</title>
                     </Helmet>
                     <BlogComponent
                         data={posts.result.results}

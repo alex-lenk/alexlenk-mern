@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Gray } from "../../utils/colors";
-import { FormInput, FormTextarea } from "../Form";
-import { MainButton } from "../MainButton";
+import { FormInput, FormTextarea } from "../../components/Form";
+import { MainButton } from "../../components/MainButton";
 
 export const AddPostContainer = styled.div`
     width: 100%;

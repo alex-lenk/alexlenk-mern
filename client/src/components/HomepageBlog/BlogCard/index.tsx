@@ -14,7 +14,7 @@ import {
     TitleContainer,
 } from "./BlogCardComponents";
 
-const BlogCard: React.FC<shortPostInterface> = ({ imageURL, title, description, slug }) => {
+const BlogCard: React.FC<shortPostInterface> = ({ imageURL, title, introtext, slug }) => {
     return (
         <CardContainer>
             <ImgContainer>
@@ -28,7 +28,7 @@ const BlogCard: React.FC<shortPostInterface> = ({ imageURL, title, description, 
                     <Title>{title}</Title>
                 </TitleContainer>
                 <DescriptionContainer>
-                    <Description>{description}</Description>
+                    <Description>{introtext}</Description>
                 </DescriptionContainer>
             </TextContainer>
             <ButtonContainer>

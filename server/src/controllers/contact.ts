@@ -41,8 +41,8 @@ export const contactController = (req: Request, res: Response) => {
     });
     const messageToSend = {
         to: process.env.EMAIL_TO_SEND,
-        from: "Astronomy Blog",
-        subject: "New message from Astronomy blog",
+        from: "Blog",
+        subject: "New message from blog",
         text: `From: ${formData.name} \n email: ${formData.email} \n subject: ${formData.subject} \n message:${formData.message}`,
     };
 

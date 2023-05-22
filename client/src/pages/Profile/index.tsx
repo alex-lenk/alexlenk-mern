@@ -2,7 +2,7 @@ import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useSelector } from "react-redux";
 import ProfileComponent from "../../components/ProfileComponent";
-import { RootState } from "../../index";
+import { RootState } from "../../redux";
 
 interface IProfileData {
     imageSrc: string;

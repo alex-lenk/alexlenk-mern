@@ -2,6 +2,7 @@ export interface postInterface {
     _id: string;
     title: string;
     description: string;
+    introtext: string;
     content: string;
     imageURL: string;
     slug: string;
@@ -17,6 +18,7 @@ export interface postInterface {
 export interface IComment {
     _id: string;
     content: string;
+    introtext: string;
     createdAt: string;
     createdBy: {
         username: string;
@@ -27,6 +29,7 @@ export interface IComment {
         {
             _id: string;
             content: string;
+            introtext: string;
             createdAt: string;
             createdBy: {
                 username: string;
@@ -38,7 +41,7 @@ export interface IComment {
 }
 export interface shortPostInterface {
     title: string;
-    description: string;
+    introtext: string;
     slug: string;
     imageURL: string;
     id: string;

@@ -25,34 +25,24 @@ export const Nav = styled.nav<backgroundColor>`
         width: 100%;
     }
 `;
-export const NavbarLogo = styled.div`
-    height: 100%;
-    width: 10rem;
-`;
-export const LogoImg = styled.img`
-    height: 100%;
-    width: 100%;
-    filter: invert(1);
-`;
 
 export const MobileIcon = styled.div`
-    display: none;
-    z-index: 999;
-    @media (max-width: 960px) {
-        display: block;
-        width: 80px;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: all 0.5s ease;
-        cursor: pointer;
-        & * {
-            display: block;
-            width: 40%;
-            height: 40%;
-        }
+  display: none;
+  z-index: 999;
+  @media (max-width: 960px) {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    & * {
+      display: block;
+      width: 40%;
+      height: 40%;
     }
+  }
 `;
 
 export const NavContainer = styled(Container)`

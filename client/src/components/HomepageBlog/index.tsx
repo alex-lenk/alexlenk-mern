@@ -3,7 +3,7 @@ import { CardsContainer, HomepageBlogContainer } from "./homepageBlogComponents"
 import BlogCard from "./BlogCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { RootState } from "../../index";
+import { RootState } from "../../redux";
 import { getPosts } from "../../redux/slices/posts";
 import React from "react";
 

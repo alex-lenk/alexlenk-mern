@@ -44,7 +44,7 @@ const PaginatePosts = ({posts, page, perPage}: { posts: IPost[]; page: number; p
 const SlicePosts = ({posts}: { posts: IPost[] }) => {
     return posts.map((newPost) => {
         return {
-            description: newPost.description,
+            introtext: newPost.introtext,
             title: newPost.title,
             imageURL: newPost.imageURL,
             slug: newPost.slug,

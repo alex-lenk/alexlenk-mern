@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import {
     Nav,
-    NavbarLogo,
-    LogoImg,
     MobileIcon,
     NavContainer,
     NavItem,
@@ -15,18 +13,12 @@ import {
     NewLink,
 } from "./navbarComponents";
 import { FaTimes, FaBars } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 const Navbar = ({ background, image }: { background?: string; image?: string }) => {
     const [click, setClick] = useState(false);
     return (
         <Nav background={background}>
             <NavContainer>
-                <Link to="/">
-                    <NavbarLogo>
-                        <LogoImg src="/images/logo.svg" alt="astronomy logo" height="25" width="160" />
-                    </NavbarLogo>
-                </Link>
                 <NavbarLinks onClick={() => setClick(false)} click={click}>
                     <NavItem>
                         <NavLink to="/">Home</NavLink>

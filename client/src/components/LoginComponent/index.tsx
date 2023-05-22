@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { DarkBackground } from "../../containers/DarkBackground";
 import { loginUser } from "../../redux/slices/auth";
-import { RootState } from "../../index";
+import { RootState } from "../../redux";
 import { Form, FormInput, FormTitle, Message, MessageContainer, UnderFormText } from "../Form";
 import { MainButton } from "../MainButton";
 import React from "react";
