@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, {Schema} from 'mongoose';
 
 export interface IComment extends mongoose.Document {
     date: string | number | Date;
@@ -18,7 +18,7 @@ const commentSchema = new mongoose.Schema<IComment>({
         required: true,
     },
     createdBy: {
-        type: mongoose.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "User",
     },
     replies: [

@@ -56,10 +56,10 @@ export const AddPost = (req: IGetUserAuthInfoRequest, res: Response) => {
     res.status(401).send({message: "Title length should be between 3 and 80 characters"});
     return;
   }
-  if (!isURL(imageURL)) {
-    res.status(401).send({message: "Image URL is not a valid URL"});
-    return;
-  }
+  // if (!isURL(imageURL)) {
+  //   res.status(401).send({message: "Image URL is not a valid URL"});
+  //   return;
+  // }
   if (content.length < 15 || content.length > 30000) {
     res.status(401).send({message: "Content length should be between 15 and 30000 characters"});
     return;

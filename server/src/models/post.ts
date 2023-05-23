@@ -54,7 +54,7 @@ const postSchema = new Schema<IPost>({
     required: true,
   },
   createdBy: {
-    type: Types.ObjectId,
+    type: Schema.Types.ObjectId,
     ref: "User",
   },
   comments: [commentSchema],
