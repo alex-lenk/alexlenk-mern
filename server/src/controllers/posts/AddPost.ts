@@ -2,7 +2,7 @@ import {Response} from "express";
 import CyrillicToTranslit from "cyrillic-to-translit-js";
 import slugify from "slugify";
 import {IGetUserAuthInfoRequest} from "../../middleware/tokenCheck";
-import isURL from "../../utils/isURL";
+// import isURL from "../../utils/isURL";
 import Post from "../../models/post";
 
 const generateSlug = (title: string): string => {
@@ -23,6 +23,7 @@ export const AddPost = (req: IGetUserAuthInfoRequest, res: Response) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const {
     title,
+    pageTitle,
     imageURL,
     content,
     description,
@@ -31,6 +32,7 @@ export const AddPost = (req: IGetUserAuthInfoRequest, res: Response) => {
     category,
   }: {
     title: string;
+    pageTitle: string;
     imageURL: string;
     content: string;
     description: string;
@@ -40,6 +42,10 @@ export const AddPost = (req: IGetUserAuthInfoRequest, res: Response) => {
   } = req.body;
   if (!title) {
     res.status(401).send({message: "You need to type a title"});
+    return;
+  }
+  if (!pageTitle) {
+    res.status(401).send({message: "You need to type a pageTitle"});
     return;
   }
   if (!imageURL) {
@@ -54,8 +60,12 @@ export const AddPost = (req: IGetUserAuthInfoRequest, res: Response) => {
     res.status(401).send({message: "Your post should be in a category"});
     return;
   }
-  if (title.length < 3 || title.length > 80) {
-    res.status(401).send({message: "Title length should be between 3 and 80 characters"});
+  if (title.length < 3 || title.length > 180) {
+    res.status(401).send({message: "Title length should be between 3 and 180 characters"});
+    return;
+  }
+  if (pageTitle.length < 3 || pageTitle.length > 180) {
+    res.status(401).send({message: "Title length should be between 3 and 180 characters"});
     return;
   }
   // if (!isURL(imageURL)) {
@@ -72,6 +82,7 @@ export const AddPost = (req: IGetUserAuthInfoRequest, res: Response) => {
   }
   const post = new Post();
   post.title = title;
+  post.pageTitle = pageTitle;
   post.content = content;
   post.introtext = introtext.slice(0, 300);
   post.tags = [...tags]; //So that it doesn't refference memory address (even though I think it's ok in this case)

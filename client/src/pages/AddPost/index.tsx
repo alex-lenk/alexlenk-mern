@@ -28,6 +28,7 @@ const AddPost = () => {
 
   interface IFormData {
     title: string;
+    pageTitle: string;
     content: string;
     description: string;
     introtext: string;
@@ -55,6 +56,7 @@ const AddPost = () => {
 
   const [formData, setFormData] = useState<IFormData>({
     title: "",
+    pageTitle: "",
     content: "",
     description: "",
     introtext: "",
@@ -123,6 +125,15 @@ const AddPost = () => {
             placeholder="Type the desired title for your post"
             onChange={handleChange}
           />
+
+          <AddPostLabel htmlFor="title">pageTitle</AddPostLabel>
+          <AddPostInput
+            type="text"
+            name="pageTitle"
+            placeholder="Type the desired pageTitle for your post"
+            onChange={handleChange}
+          />
+
           <AddPostLabel htmlFor="imageURL">Image URL</AddPostLabel>
           <AddPostInput type="text" name="imageURL" placeholder="Paste image URL" onChange={handleChange}/>
 

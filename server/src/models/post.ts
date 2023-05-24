@@ -3,6 +3,7 @@ import commentSchema, {IComment} from "./comment";
 
 export interface IPost extends Document {
   title: string;
+  pageTitle: string;
   description: string;
   content: string;
   introtext: string;
@@ -17,6 +18,10 @@ export interface IPost extends Document {
 
 const postSchema = new Schema<IPost>({
   title: {
+    type: String,
+    required: true,
+  },
+  pageTitle: {
     type: String,
     required: true,
   },
