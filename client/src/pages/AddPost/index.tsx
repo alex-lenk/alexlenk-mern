@@ -29,6 +29,7 @@ const AddPost = () => {
   interface IFormData {
     title: string;
     content: string;
+    description: string;
     introtext: string;
     imageURL: string;
     category: string;
@@ -55,6 +56,7 @@ const AddPost = () => {
   const [formData, setFormData] = useState<IFormData>({
     title: "",
     content: "",
+    description: "",
     introtext: "",
     imageURL: "",
     category: "",
@@ -139,6 +141,13 @@ const AddPost = () => {
           <AddPostTextArea
             name="introtext"
             placeholder="Write the introtext of the post"
+            onChange={handleChangeTextarea}
+          ></AddPostTextArea>
+
+          <AddPostLabel htmlFor="introtext">meta description</AddPostLabel>
+          <AddPostTextArea
+            name="description"
+            placeholder="Write the description of the post"
             onChange={handleChangeTextarea}
           ></AddPostTextArea>
 

@@ -18,7 +18,7 @@ export const DeletePost = (req: IGetUserAuthInfoRequest, res: Response) => {
                 res.status(403).send({message: "You don't have permission to delete this post"});
                 return;
             }
-            post.remove()
+            post.deleteOne()
                 .then((data) => {
                     res.send({data: data, message: "Post deleted successfully"});
                 })

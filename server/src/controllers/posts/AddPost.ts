@@ -25,6 +25,7 @@ export const AddPost = (req: IGetUserAuthInfoRequest, res: Response) => {
     title,
     imageURL,
     content,
+    description,
     introtext,
     tags,
     category,
@@ -32,6 +33,7 @@ export const AddPost = (req: IGetUserAuthInfoRequest, res: Response) => {
     title: string;
     imageURL: string;
     content: string;
+    description: string;
     introtext: string;
     tags: string[];
     category: string
@@ -76,7 +78,7 @@ export const AddPost = (req: IGetUserAuthInfoRequest, res: Response) => {
   post.imageURL = imageURL;
   post.category = category;
   post.slug = generateSlug(post.title);
-  post.description = content.slice(0, 55);
+  post.description = description.slice(0, 200);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   post.createdBy = req.user.id;
   post.save()
