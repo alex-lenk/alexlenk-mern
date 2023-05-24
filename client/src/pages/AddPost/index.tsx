@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import {WithContext as ReactTags} from "react-tag-input";
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
+// import ReactQuill from 'react-quill';
+// import 'react-quill/dist/quill.snow.css';
 import "./style.css";
 
 import {
@@ -47,12 +47,12 @@ const AddPost = () => {
     error: string | null;
   }
 
-  const handleChangeQuill = (content: string) => {
+  /*const handleChangeQuill = (content: string) => {
     setFormData({
       ...formData,
       content
     });
-  };
+  };*/
 
   const [formData, setFormData] = useState<IFormData>({
     title: "",
@@ -137,6 +137,15 @@ const AddPost = () => {
           <AddPostLabel htmlFor="imageURL">Image URL</AddPostLabel>
           <AddPostInput type="text" name="imageURL" placeholder="Paste image URL" onChange={handleChange}/>
 
+          <AddPostLabel htmlFor="content">content text</AddPostLabel>
+          <AddPostTextArea
+              name="content"
+              placeholder="Write the content of the post"
+              onChange={handleChangeTextarea}
+          ></AddPostTextArea>
+
+
+          {/*
           <h2>Content</h2>
           <ReactQuill theme="snow" value={formData.content} onChange={handleChangeQuill}/>
 
@@ -147,7 +156,7 @@ const AddPost = () => {
           <hr/>
           <br/>
           <br/>
-
+*/}
           <AddPostLabel htmlFor="introtext">Intro text</AddPostLabel>
           <AddPostTextArea
             name="introtext"

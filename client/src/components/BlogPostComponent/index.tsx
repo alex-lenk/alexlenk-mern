@@ -150,7 +150,7 @@ const BlogPostComponent: React.FC<postInterface> = ({
         </UnderTitle>
 
         <ContentContainer>
-          {!editMode && <Content>{content}</Content>}
+          {!editMode && <Content dangerouslySetInnerHTML={ { __html: content } } />}
           {editMode && (
             <>
               <FormContent onSubmit={handlePostChanges}>
